@@ -46,7 +46,7 @@ GBDTs can be used to predict which customers are likely to leave a company by an
 These are just a few examples, GBDTs are widely used in many other fields such as natural language processing and speech recognition. The flexibility of the GBDT algorithm makes it applicable to a wide range of problems.
 
 ### Neural Networks
-Neural networks are a subset of machine learning and instrumental to deep learning that are intended to imitate how biological neurons transmit information in the human brain. They are also powerful tools that allow us to perform tasks like speech recognition and image recognition at high speed. 
+Neural networks are a subset of machine learning algorithms intended to imitate how biological neurons transmit information in the human brain. They are also powerful tools that allow us to perform tasks like speech recognition and image recognition at high speed. 
 
 #### How do neural networks work?
 The basic structure of a neural network is the input layer, the hidden layer(s), and the output layer. Each of these layers contains nodes, which can be analogized to biological neurons. Each of these nodes connects to another deeper node. Each node also has weight and a threshold. 
