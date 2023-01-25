@@ -14,7 +14,6 @@ You will be able to:
 
 * Distinguish between white-box and black-box models
 * Explain two common black-box models, XGBoost and neural networks and identify use cases for each
-* Explain some common interpretation methods for black-box models.
 
 ## White-Boxes vs Black-Boxes
 
