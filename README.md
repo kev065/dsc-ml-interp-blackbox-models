@@ -1,42 +1,74 @@
-# Lesson Title
+# Machine Learning Interpretability
 
 ## Introduction
 
-Introduction goes here
+In the previous lessons, we discussed that some models that are considered intrinsically interpretable, such as simple regression and decision trees. We referred to these as white-box models, a nickname that suggests that the algorithm is transparent and easy to understand using summary statistics and data visualizations. 
+
+White-box models are excellent tools for solving certain problems and can make predictions with a reasonable degree of accuracy. However, over the past few decades, new algorithms have been developed that allow researchers to build models that can make predictions over very large data sets with many features. This includes (but is not limited to) neural networks and complex tree-based models like XGBoost. 
+
+Due to their sophisticated handling of large datasets, these __black-box models__ can offer incredible learning potential and increased accuracy if you are willing to reduce the simplicity of your interpretation. In this lesson, we will discuss the attributes of black-box models and how we can interpret them to increase our confidence in the results.
 
 ## Objectives
 
 You will be able to:
 
-* SWBAT 1
-* SWBAT 2
-* SWBAT 3
+* Distinguish between white-box and black-box models
+* Explain two common black-box models, XGBoost and neural networks and identify use cases for each
+* Explain some common interpretation methods for black-box models.
 
+## White-Boxes vs Black-Boxes
 
-## Topic Title 1
+A black box model is a model that is not __intrinsically interpretable__. A model is considered intriniscally interpretable, when the it is easy for an observer to understand how the model arrived at its prediction. One example of this could be a time-series plot that visualizes dates on the x-axis and temperature on the y-axis. Individuals familiar with how line plots work could infer increase in date correlates with an increase in temperature. Alternatively, we could manually analyze a list of sorted data points indicating data and temperature to arrive at the same conclusion.
 
-Text for topic title 1
+When there were greater limitations on data storage and compute resources, models that require those resources and complex __post-hoc explanations__ were not always practical or accessible for widespread use. However, as advances in technology have increased access to large data stores and powerful computers, researchers are beginning to harness the benefits of black-box models, namely increased accuracy in predictions. 
 
-### Topic Subtitle 1
+Just because black-box models are not easy to interpret, does not mean that they cannot be explained. Let's discuss some of the most popular __black-box models__ and the methods we can use to extract post-hoc explanations to gain insight.
 
-Text for topic subtitle 1
+## Common Black-Box Models
 
+### Gradient Boosted Trees (GBDT)
+A __Gradient Boosting Decision Trees (GBDT)__ is an tree-based ensemble learning algorithm that is similar to a random forest. Ensemble methods combine multiple algorithms to produce a more well-rounded model and can be used for classification or regression. To get a basic understanding of how GBDT works, it is helpful to review decision trees and discuss gradient boosting.
 
-```python
-## content for topic title 1
-```
+As you may recall, decision trees create a model that makes a prediction by evaluating conditional and true-false feature questions. __Boosting__ enhances a single weak model with many other weak models and combining results to get a better prediction. __Gradient boosting__ is the process of additively generating weak models and then formalizing their results as a gradient descent algorithm over an objective function. Then, the algorithm iterates over each model and creates a target outcome for the next model, based on the gradient of the error for the first model, moving closer to the most accurate prediction at each step. This is different then a random forest, which instead bags and averages multiple trees to arrive at its final prediction.
 
-## Topic Title 2
+Some applications of GBDTs include, but are not limited to:
 
+* __Fraud detection__ - GBDTs can be used to identify fraudulent transactions by analyzing patterns of behavior in large datasets of financial transactions.
 
-```python
-## content for topic title 2
-```
+* __Predicting medical outcomes__ - GBDTs can be used to predict the likelihood of certain medical outcomes, such as the likelihood of a patient developing a particular disease or the effectiveness of a certain treatment.
 
-## Topic Title 3
+* __Recommender systems__ - GBDTs can be used to build recommender systems that suggest products or content to users based on their previous interactions and preferences.
 
-Text for topic title 3
+* __Computer vision__ - GBDTs can be used to build image and video analysis systems that can recognize and classify objects, people, and activities, which can be applied in many fields such as surveillance, self-driving cars, and medical imaging.
+
+* __Predicting customer churn__ -
+GBDTs can be used to predict which customers are likely to leave a company by analyzing their behavior and demographics. This can help companies to proactively retain customers by targeting them with special promotions or incentives.
+
+These are just a few examples, GBDTs are widely used in many other fields such as natural language processing and speech recognition. The flexibility of the GBDT algorithm makes it applicable to a wide range of problems.
+
+### Neural Networks
+Neural networks are a subset of machine learning and instrumental to deep learning that are intended to imitate how biological neurons transmit information in the human brain. They are also powerful tools that allow us to perform tasks like speech recognition and image recognition at high speed. 
+
+#### How do neural networks work?
+The basic structure of a neural network is the input layer, the hidden layer(s), and the output layer. Each of these layers contains nodes, which can be analogized to biological neurons. Each of these nodes connects to another deeper node. Each node also has weight and a threshold. 
+
+When a threshold is met, the node is activated, allowing the data to move to the next layer of the network. 
+
+#### Use Cases for Neural Networks
+Neural networks are used for a number of applications in the medical field. For example:
+
+* __Medical Imaging__ -
+Neural networks can be trained to analyze medical images such as X-rays, CT scans, and MRI scans, and identify specific features or abnormalities. This can help radiologists and other medical professionals to more accurately and efficiently diagnose diseases such as cancer, heart disease, and neurological disorders.
+
+* __Drug Research and Development__ -
+Another example use case is in the field of drug discovery. Neural networks can be used to analyze large amounts of data from chemical compounds and predict the potential effectiveness and side effects of new drugs. This can help pharmaceutical companies to more quickly and effectively identify new drug candidates for testing and development.
+
+* __Patient Outcomes__ -
+Additionally, neural networks can be used to predict patient outcomes, such as risk of readmission, progression of a disease and survival rate, based on a wide range of patient data, including genetic, demographic, and clinical data. This can help doctors and other medical professionals to make more informed decisions about patient care and treatment.
+
+In general, neural networks have a lot of potential in medicine due to their ability to analyze and learn from large amounts of data and make predictions, which can help to improve the accuracy and efficiency of medical diagnosis and treatment.
 
 ## Summary
+A white-box model is a model whose inner workings and decision-making process can be easily understood and interpreted by humans. This typically includes models that are based on simple mathematical equations and decision trees. A black-box model, on the other hand, is a model whose inner workings and decision-making process are hidden or difficult for humans to understand. This typically includes models that are based on complex mathematical equations, such as neural networks and machine learning algorithms. The main difference between white-box and black-box models is the level of interpretability and transparency of the model.
 
-Summary goes here
+While black-box models are seemingly less interpretable than white-box models, there are still a variety of methods that we can use to explain the results of black-box models. In the next lesson, we will explore some use cases for neural networks and what methods we can use to explain them. 
